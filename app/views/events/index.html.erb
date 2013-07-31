@@ -1,0 +1,27 @@
+<h2> Detail chat</h2>
+<p>
+<%@events.each do |event| %>
+  <%=event.occurred_at.strftime("%H:%M") %>
+  <%=event.actor %>
+  <%=event.action %>
+  <%=event.content %>
+  <%=event.receiver %>
+ </br>
+<% end %>
+
+
+
+<p>
+5pm
+<p>
+<%@hour_five.each do |event_value,event|%>
+  <%="#{event_value}, #{event}"%>
+  </br>
+<% end %>
+<p>
+6pm
+<p>
+<%@hour_six.each do |event_value,event|%>
+  <%="#{event_value}, #{event}"%>
+  </br>
+<% end %>

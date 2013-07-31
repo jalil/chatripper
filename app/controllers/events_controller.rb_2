@@ -1,0 +1,11 @@
+class EventsController < ApplicationController
+
+  def index
+    @events = Event.all.order('created_at ASC')
+
+    @hourly_summaries = Event.retval_uniq_hours.each do |event_hour| 
+         Event.hourly_summary(event_hour,'06')
+    end
+
+  end
+end

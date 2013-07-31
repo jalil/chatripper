@@ -1,0 +1,9 @@
+class EventsController < ApplicationController
+
+  def index
+    @events = Event.all.order('created_at ASC')
+    
+    Event.hourly_summary('05','06')
+
+  end
+end
